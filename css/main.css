@@ -1,0 +1,188 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: "header header header header" "main main main sidebar1" "main main main sidebar2" "footer footer footer footer";
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid;
+}
+
+#app-title {
+    width: 20%;
+}
+
+#navbar {
+    width: 80%;
+}
+
+main {
+    grid-area: main;
+}
+
+#aside1 {
+    grid-area: sidebar1;
+    overflow-wrap: break-word;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#aside2 {
+    grid-area: sidebar2;
+    overflow-wrap: break-word;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+header section h1 {
+    margin-left: 1%;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-table;
+    margin-right: 2%;
+}
+
+a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+textarea {
+    max-width: 95%;
+    margin-bottom: 1%;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 2px;
+    margin-bottom: 1%;
+}
+
+#updatetop {
+    float: left;
+    margin-bottom: 2%;
+}
+
+#oc-status {
+    display: none;
+}
+
+.oc-status-success {
+    text-align: center;
+    color: #155724;
+    background-color: #d4edda;
+    font-weight: bolder;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 2%;
+    padding: 0.5%;
+    border-radius: 2px;
+}
+
+.oc-status-danger {
+    text-align: center;
+    color: #721c24;
+    background-color: #f8d7da;
+    font-weight: bolder;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 2%;
+    padding: 0.5%;
+    border-radius: 2px;
+}
+
+#oc-status-close {
+    float: right;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+#about-me {
+    margin-top: 1%;
+    overflow-x: auto;
+    display: none;
+}
+
+#about-me h3 {
+    text-align: center;
+}
+
+/* th, td {
+    padding: 1%;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+} */
+
+#career-desc {
+    text-align: center;
+}
+
+#personal-expander {
+    font-size: larger;
+    text-decoration: none;
+}
+
+/* #skills, #tech-skills-header {
+    display: none;
+}
+
+#skills-expander {
+    font-size: larger;
+    text-decoration: none;
+}
+ */
+
+/* Media Queries */
+
+@media only screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-areas: "header header header header" "main main main main" "sidebar1 sidebar1 sidebar1 sidebar1" "sidebar2 sidebar2 sidebar2 sidebar2" "footer footer footer footer";
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header nav ul li {
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+    #app-title {
+        text-align: center;
+        width: 100%;
+    }
+    #navbar {
+        width: 100%;
+    }
+    #updatetop {
+        margin-bottom: 5%;
+    }
+}

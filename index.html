@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sudhakar Ramasamy</title>
+    <link rel="icon" href="sudax.png">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="manifest" href="/manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Sudhakar">
+    <link rel="apple-touch-icon" href="sudax.png">
+    <meta name="msapplication-TileImage" content="sudax.png">
+    <meta name="msapplication-TileColor" content="black">
+    <meta name="description" content="Sudhakar Ramasamy's resume">
+    <meta name="keywords" content="sudhakar, sudhakar3697, rsudhakar3697, sudhakar rs, sudhakar ramasamy">
+    <meta name="author" content="Sudhakar Ramasamy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="grid-container" onload="loadData()">
+    <header>
+        <section id="app-title">
+            <h1>Sudhakar Ramasamy</h1>
+        </section>
+        <nav id="navbar">
+            <ul>
+                <li><a id="about-me-button">About Me</a></li>
+                <li><a rel="noopener noreferrer" target="_blank" href="res/resume.pdf">Résumé</a></li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://github.com/sudhakar3697"><img
+                            src="res/logos/github.svg" height="30" width="30" alt="GitHub"
+                            title="github.com/sudhakar3697" /></a></li>
+                <li><a rel="noopener noreferrer" target="_blank"
+                        href="https://stackoverflow.com/users/12167785/sudhakar-rs"><img
+                            src="res/logos/stackoverflow.svg" height="30" width="30" alt="StackOverflow"
+                            title="stackoverflow.com/users/12167785/sudhakar-rs" /></a>
+                </li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://dev.to/sudhakar3697"><img
+                            src="res/logos/dev.svg" height="30" width="30" alt="DEV" title="dev.to/sudhakar3697" /></a>
+                </li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://www.npmjs.com/~sudhakar3697"><img
+                            src="res/logos/npm.svg" height="30" width="30" alt="NPM"
+                            title="npmjs.com/~sudhakar3697" /></a></li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/sudhakar3697"><img
+                            src="res/logos/linkedin.svg" height="30" width="30" alt="LinkedIn"
+                            title="linkedin.com/in/sudhakar3697" /></a>
+                </li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://twitter.com/sudhakar3697"><img
+                            src="res/logos/twitter.svg" height="30" width="30" alt="Twitter"
+                            title="twitter.com/sudhakar3697" /></a>
+                </li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/sudaxography"><img
+                            src="res/logos/instagram.svg" height="30" width="30" alt="Instagram"
+                            title="instagram.com/sudaxography" /></a>
+                </li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/sudhakar3697"><img
+                            src="res/logos/facebook.svg" height="30" width="30" alt="Facebook"
+                            title="facebook.com/sudhakar3697" /></a></li>
+                <li><a rel="noopener noreferrer" target="_blank" href="mailto:mailingtosudhakar@gmail.com"><img
+                            src="res/logos/gmail.svg" height="30" width="30" alt="Gmail"
+                            title="mailingtosudhakar@gmail.com" /></a>
+                </li>
+                <li><a rel="noopener noreferrer" target="_blank" href="tel:+917010524596"><img src="res/logos/phone.svg"
+                            height="30" width="30" alt="Phone" title="+917010524596" /></a></li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://wa.me/+917010524596/?text=Hi"><img
+                            src="res/logos/whatsapp.svg" height="30" width="30" alt="WhatsApp"
+                            title="+917010524596" /></a></li>
+                <li><button id="night">Dark Theme</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="oc-section">
+            <label for="outc">
+                <h3 id="oc-h3">Our Clipboard!</h3>
+            </label>
+            <div id="oc-status"><span id="oc-status-text">OC Status</span><span id="oc-status-close">x</span></div>
+            <button id="updatetop" onclick="update()">Update</button>
+            <textarea rows="20" cols="150" id="outc" spellcheck="false"
+                placeholder="Copied items will appear here you can add/remove/update"></textarea>
+            <br />
+            <button onclick="update()">Update</button>
+        </section>
+        <section id="about-me">
+            <a id="show-oc-button">Our Clipboard</a>
+            <h3>Career</h3>
+            <p id="career-desc">Software Developer <a href="https://www.dell.com" rel="noopener noreferrer"
+                    target="_blank">@dell</a>.
+                Interested
+                in JavaScript, Node,
+                Deno, PWA & WebAssembly.</p>
+            <!-- <h3 id="tech-skills-header">My Technical Skills <a id="skills-expander">&#709;</a></h3>
+            <table id="skills">
+                <tr>
+                    <th>Language/Runtime/Framework</th>
+                    <th>Rating</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td>JavaScript (Language)</td>
+                    <td>Expert</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Node.js (JavaScript Runtime)</td>
+                    <td>Expert</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Express.js (Node.js framework for Web servers)</td>
+                    <td>Expert</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Progressive Web Apps (PWA)</td>
+                    <td>Intermediate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>WebAssembly, WebAssembly System Interface (WASM, WASI)</td>
+                    <td>Intermediate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Native node modules using C++/N-API</td>
+                    <td>Intermediate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>HTML/CSS</td>
+                    <td>Intermediate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>React.js</td>
+                    <td>Beginner</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Electron.js (cross-platform desktop apps)</td>
+                    <td>Expert</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SQL, NoSQL DBs, Serverless DBs, ORM</td>
+                    <td>Expert</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>REST API</td>
+                    <td>Expert</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>GraphQL</td>
+                    <td>Beginner</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Serverless Functions (FaaS)</td>
+                    <td>Beginner</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TypeScript (Superset of JavaScript)</td>
+                    <td>Learning</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Deno (Improved Runtime from the creator of Node.js)</td>
+                    <td>Learning</td>
+                    <td></td>
+                </tr>
+            </table> -->
+            <h3>About Me <a id="personal-expander">&#708;</a></h3>
+            </h3>
+            <div id="personal">
+                <!-- Elder Sister (Subashri – M.A B.Ed.), Mom & Dad (Sumathi, Ramasamy) -->
+                <!-- Nicknames: Office- legend, sudha, College- sudax, sudhax, Avasaram. Mom- saamy -->
+                <p>Born on 3 June 1997 to an agricultural family in a village namely, Puthira Goundan Palayam in Salem,
+                    Tamil Nadu. I have an elder sister.</p>
+                <p>Had my early schooling in my village at Panchayat Union Elementary School (2002-07) and Government
+                    Higher Secondary School, Yethapur, Salem, Tamil Nadu (2007-14). Cleared Tamil Nadu Rural Students
+                    Talent Search Examination (TRUST) in 2011, Used to participate in Essay, Oratorical competitions in
+                    Tamil.</p>
+                <p>Received admission to B.Tech Information Technology at VIT University, Vellore, Tamil Nadu under the
+                    institution’s Support The Advancement of Rural Students (STARS) programme for securing 93.33% in the
+                    Tamil Nadu HSE Board Exam.
+                    <!--I have created an informative website for the VIT SET conference 2017.-->
+                    Graduated with 8.92 CGPA, Joined Dell via Campus Placement in 2018.
+                </p>
+                <p>Single, Ambidextrous, Teetotaler, Walk fast, Don’t read books, Rarely watch movies/series.</p>
+                <p>Humanitarian, Nature lover, Adaptive, Loyal, Hardworking, Funny.</p>
+                <p>Restless (Hard time sitting still), Hate routines, Quickly bored, Indecisive.</p>
+                <p>Hobbies/Interests are Internet Surfing, Listening to Songs, Meme Creation, Playing Cricket/Badminton,
+                    Capturing the
+                    Nature,
+                    Organizing, Gardening.</p>
+            </div>
+        </section>
+    </main>
+    <aside id="aside1">
+        <h3>My DEV Articles</h3>
+        <ul id="articles"></ul>
+    </aside>
+    <aside id="aside2">
+        <h3>My GitHub Repos</h3>
+        <ul id="repos"></ul>
+    </aside>
+    <footer>
+        <p>Thank you for visiting.</p>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
