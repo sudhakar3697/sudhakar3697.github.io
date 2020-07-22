@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-areas: "header header header header" "main main main sidebar1" "main main main sidebar2" "footer footer footer footer";
+    grid-template-areas: "header header header header" "sidebar3 main main sidebar1" "sidebar4 main main sidebar2" "footer footer footer footer";
 }
 
 header {
@@ -26,6 +26,10 @@ main {
     grid-area: main;
 }
 
+aside h3, #oc-h3 {
+    text-align: center;
+}
+
 #aside1 {
     grid-area: sidebar1;
     overflow-wrap: break-word;
@@ -38,6 +42,22 @@ main {
     overflow-wrap: break-word;
     max-height: 300px;
     overflow-y: scroll;
+}
+
+#aside3 {
+    grid-area: sidebar3;
+    overflow-wrap: break-word;
+    max-height: 300px;
+    overflow-y: scroll;
+    margin-right: 3%;
+}
+
+#aside4 {
+    grid-area: sidebar4;
+    overflow-wrap: break-word;
+    max-height: 300px;
+    overflow-y: scroll;
+    margin-right: 3%;
 }
 
 footer {
@@ -166,7 +186,10 @@ th, td {
 
 @media only screen and (max-width: 992px) {
     .grid-container {
-        grid-template-areas: "header header header header" "main main main main" "sidebar1 sidebar1 sidebar1 sidebar1" "sidebar2 sidebar2 sidebar2 sidebar2" "footer footer footer footer";
+        grid-template-areas: "header header header header" "main main main main" "sidebar1 sidebar1 sidebar1 sidebar1" "sidebar2 sidebar2 sidebar2 sidebar2" "sidebar3 sidebar3 sidebar3 sidebar3" "sidebar4 sidebar4 sidebar4 sidebar4" "footer footer footer footer";
+    }
+    #aside3, #aside4 {
+        margin-right: 0;
     }
 }
 

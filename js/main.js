@@ -7,6 +7,7 @@ async function loadData() {
     showClips();
     getArticles();
     getProjects();
+    addTwitterTimeline('light');
 }
 
 async function showClips() {
@@ -173,6 +174,7 @@ function toggleMode() {
         for (const a of document.getElementsByTagName('a')) {
             a.style.color = 'blue';
         }
+        addTwitterTimeline('light');
         // for (const tr of document.getElementsByTagName('tr')) {
         //     tr.style.backgroundColor = 'white';
         // }
@@ -205,6 +207,7 @@ function toggleMode() {
         for (const a of document.getElementsByTagName('a')) {
             a.style.color = '#34e2eb';
         }
+        addTwitterTimeline('dark');
         // for (const tr of document.getElementsByTagName('tr')) {
         //     tr.style.backgroundColor = 'black';
         // }
@@ -223,3 +226,20 @@ function toggleMode() {
 document.querySelector('#night').addEventListener('click', () => {
     toggleMode();
 });
+
+async function addTwitterTimeline(theme) {
+    const holder = document.getElementById('tw-tl');
+    holder.innerHTML = null;
+    twttr.widgets.createTimeline(
+        {
+            sourceType: 'profile',
+            screenName: 'sudhakar3697'
+        },
+        holder,
+        {
+            theme,
+            tweetLimit: 3,
+            chrome: 'noheader'
+        }
+    );
+}
