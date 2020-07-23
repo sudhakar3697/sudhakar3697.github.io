@@ -150,7 +150,7 @@ button {
     text-align: center;
 }
 
-/* th, td {
+th, td {
     padding: 1%;
     text-align: left;
 }
@@ -161,7 +161,7 @@ tr:hover {
 
 th, td {
     border-bottom: 1px solid #ddd;
-} */
+}
 
 #career-desc {
     text-align: center;
@@ -172,7 +172,7 @@ th, td {
     text-decoration: none;
 }
 
-/* #skills, #tech-skills-header {
+#skills {
     display: none;
 }
 
@@ -180,7 +180,6 @@ th, td {
     font-size: larger;
     text-decoration: none;
 }
- */
 
 /* Media Queries */
 

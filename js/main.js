@@ -122,19 +122,19 @@ document.querySelector('#about-me-button').addEventListener('click', () => {
 
 // toggle skills & personal in About me
 
-// let skillOpen = false;
-// document.querySelector('#skills-expander').addEventListener('click', () => {
-//     if (skillOpen) {
-//         document.getElementById('skills').style.display = 'none';
-//         document.getElementById('skills-expander').innerHTML = '&#709;';
-//         skillOpen = false;
-//     }
-//     else {
-//         document.getElementById('skills').style.display = 'block';
-//         document.getElementById('skills-expander').innerHTML = '&#708;';
-//         skillOpen = true;
-//     }
-// });
+let skillOpen = false;
+document.querySelector('#skills-expander').addEventListener('click', () => {
+    if (skillOpen) {
+        document.getElementById('skills').style.display = 'none';
+        document.getElementById('skills-expander').innerHTML = '&#709;';
+        skillOpen = false;
+    }
+    else {
+        document.getElementById('skills').style.display = 'block';
+        document.getElementById('skills-expander').innerHTML = '&#708;';
+        skillOpen = true;
+    }
+});
 
 
 let persOpen = true;
@@ -175,17 +175,17 @@ function toggleMode() {
             a.style.color = 'blue';
         }
         addTwitterTimeline('light');
-        // for (const tr of document.getElementsByTagName('tr')) {
-        //     tr.style.backgroundColor = 'white';
-        // }
-        // for (const tr of document.getElementsByTagName('tr')) {
-        //     tr.addEventListener('mouseover', () => {
-        //         tr.style.backgroundColor = '#f5f5f5';
-        //     });
-        //     tr.addEventListener('mouseout', () => {
-        //         tr.style.backgroundColor = 'white';
-        //     });
-        // }
+        for (const tr of document.getElementsByTagName('tr')) {
+            tr.style.backgroundColor = 'white';
+        }
+        for (const tr of document.getElementsByTagName('tr')) {
+            tr.addEventListener('mouseover', () => {
+                tr.style.backgroundColor = '#f5f5f5';
+            });
+            tr.addEventListener('mouseout', () => {
+                tr.style.backgroundColor = 'white';
+            });
+        }
         IsDark = false;
     } else {
         const secColor = '#fafafa';
@@ -208,17 +208,17 @@ function toggleMode() {
             a.style.color = '#34e2eb';
         }
         addTwitterTimeline('dark');
-        // for (const tr of document.getElementsByTagName('tr')) {
-        //     tr.style.backgroundColor = 'black';
-        // }
-        // for (const tr of document.getElementsByTagName('tr')) {
-        //     tr.addEventListener('mouseover', () => {
-        //         tr.style.backgroundColor = '#282828';
-        //     });
-        //     tr.addEventListener('mouseout', () => {
-        //         tr.style.backgroundColor = 'black';
-        //     });
-        // }
+        for (const tr of document.getElementsByTagName('tr')) {
+            tr.style.backgroundColor = 'black';
+        }
+        for (const tr of document.getElementsByTagName('tr')) {
+            tr.addEventListener('mouseover', () => {
+                tr.style.backgroundColor = '#282828';
+            });
+            tr.addEventListener('mouseout', () => {
+                tr.style.backgroundColor = 'black';
+            });
+        }
         IsDark = true;
     }
 }
