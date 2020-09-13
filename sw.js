@@ -1,5 +1,6 @@
-const cacheName = 'cache-v3';
+const cacheName = 'cache-v4';
 const filesToCache = [
+  '/',
   '/sudax.png',
   '/res/resume.pdf',
   '/res/logos/dev.svg',
