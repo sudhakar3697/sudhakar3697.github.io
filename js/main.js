@@ -4,11 +4,11 @@ const OC_API_URL = `https://our-clipboard.herokuapp.com/api/oc-data`;
 // const OC_API_URL = `http://localhost:5000/api/oc-data`;
 
 async function loadData() {
-    applyTheme(localStorage.getItem('theme'));
     showClips();
     getArticles();
     getProjects();
     addTwitterTimeline(localStorage.getItem('theme'));
+    applyTheme(localStorage.getItem('theme'));
 }
 
 async function showClips() {
