@@ -4,6 +4,7 @@ const OC_API_URL = `https://our-clipboard.herokuapp.com/api/oc-data`;
 // const OC_API_URL = `http://localhost:5000/api/oc-data`;
 
 async function loadData() {
+    applyTheme(true);
     showClips();
     getArticles();
     getProjects();
@@ -154,8 +155,8 @@ document.querySelector('#personal-expander').addEventListener('click', () => {
 // Dark theme
 let isDark = localStorage.getItem('dark');
 
-function toggleTheme() {
-    if (!isDark) {
+function applyTheme(noToggle = false) {
+    if (isDark && noToggle) {
         const secColor = '#fafafa';
         document.body.style.backgroundColor = 'black';
         document.body.style.color = secColor;
@@ -225,7 +226,7 @@ function toggleTheme() {
 }
 
 document.querySelector('#night').addEventListener('click', () => {
-    toggleTheme();
+    applyTheme();
 });
 
 async function addTwitterTimeline(theme) {
