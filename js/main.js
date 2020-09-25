@@ -155,7 +155,7 @@ document.querySelector('#personal-expander').addEventListener('click', () => {
 let isDark = localStorage.getItem('dark');
 
 function toggleMode() {
-    if (isDark) {
+    if (isDark === false) {
         const secColor = '#fafafa';
         document.body.style.backgroundColor = 'black';
         document.body.style.color = secColor;
