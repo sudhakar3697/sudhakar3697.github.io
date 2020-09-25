@@ -154,8 +154,8 @@ document.querySelector('#personal-expander').addEventListener('click', () => {
 // Dark theme
 let isDark = localStorage.getItem('dark');
 
-function toggleMode() {
-    if (isDark === false) {
+function toggleTheme() {
+    if (!isDark) {
         const secColor = '#fafafa';
         document.body.style.backgroundColor = 'black';
         document.body.style.color = secColor;
@@ -225,7 +225,7 @@ function toggleMode() {
 }
 
 document.querySelector('#night').addEventListener('click', () => {
-    toggleMode();
+    toggleTheme();
 });
 
 async function addTwitterTimeline(theme) {
