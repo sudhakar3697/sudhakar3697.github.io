@@ -156,38 +156,6 @@ let isDark = localStorage.getItem('dark');
 
 function toggleMode() {
     if (isDark) {
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-        document.getElementsByTagName('header')[0].style.backgroundColor = 'white';
-        document.getElementById('outc').style.backgroundColor = 'white';
-        document.getElementById('outc').style.color = 'black';
-        document.getElementById('night').innerHTML = 'Dark Theme';
-        document.getElementsByTagName('button')[0].style.color = 'white';
-        document.getElementsByTagName('button')[0].style.backgroundColor = 'black';
-        document.getElementsByTagName('button')[0].style.borderColor = 'black';
-        document.getElementsByTagName('button')[1].style.color = 'white';
-        document.getElementsByTagName('button')[1].style.backgroundColor = 'black';
-        document.getElementsByTagName('button')[1].style.borderColor = 'black';
-        document.getElementsByTagName('button')[2].style.color = 'white';
-        document.getElementsByTagName('button')[2].style.backgroundColor = 'black';
-        document.getElementsByTagName('button')[2].style.borderColor = 'black';
-        for (const a of document.getElementsByTagName('a')) {
-            a.style.color = 'blue';
-        }
-        addTwitterTimeline('light');
-        for (const tr of document.getElementsByTagName('tr')) {
-            tr.style.backgroundColor = 'white';
-        }
-        for (const tr of document.getElementsByTagName('tr')) {
-            tr.addEventListener('mouseover', () => {
-                tr.style.backgroundColor = '#f5f5f5';
-            });
-            tr.addEventListener('mouseout', () => {
-                tr.style.backgroundColor = 'white';
-            });
-        }
-        localStorage.setItem('dark', false);
-    } else {
         const secColor = '#fafafa';
         document.body.style.backgroundColor = 'black';
         document.body.style.color = secColor;
@@ -220,6 +188,39 @@ function toggleMode() {
             });
         }
         localStorage.setItem('dark', true);
+    }
+    else {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+        document.getElementsByTagName('header')[0].style.backgroundColor = 'white';
+        document.getElementById('outc').style.backgroundColor = 'white';
+        document.getElementById('outc').style.color = 'black';
+        document.getElementById('night').innerHTML = 'Dark Theme';
+        document.getElementsByTagName('button')[0].style.color = 'white';
+        document.getElementsByTagName('button')[0].style.backgroundColor = 'black';
+        document.getElementsByTagName('button')[0].style.borderColor = 'black';
+        document.getElementsByTagName('button')[1].style.color = 'white';
+        document.getElementsByTagName('button')[1].style.backgroundColor = 'black';
+        document.getElementsByTagName('button')[1].style.borderColor = 'black';
+        document.getElementsByTagName('button')[2].style.color = 'white';
+        document.getElementsByTagName('button')[2].style.backgroundColor = 'black';
+        document.getElementsByTagName('button')[2].style.borderColor = 'black';
+        for (const a of document.getElementsByTagName('a')) {
+            a.style.color = 'blue';
+        }
+        addTwitterTimeline('light');
+        for (const tr of document.getElementsByTagName('tr')) {
+            tr.style.backgroundColor = 'white';
+        }
+        for (const tr of document.getElementsByTagName('tr')) {
+            tr.addEventListener('mouseover', () => {
+                tr.style.backgroundColor = '#f5f5f5';
+            });
+            tr.addEventListener('mouseout', () => {
+                tr.style.backgroundColor = 'white';
+            });
+        }
+        localStorage.setItem('dark', false);
     }
 }
 
