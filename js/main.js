@@ -152,10 +152,10 @@ document.querySelector('#personal-expander').addEventListener('click', () => {
 });
 
 // Dark theme
-let IsDark = false;
+let isDark = localStorage.getItem('dark');
 
 function toggleMode() {
-    if (IsDark) {
+    if (isDark) {
         document.body.style.backgroundColor = 'white';
         document.body.style.color = 'black';
         document.getElementsByTagName('header')[0].style.backgroundColor = 'white';
@@ -186,7 +186,7 @@ function toggleMode() {
                 tr.style.backgroundColor = 'white';
             });
         }
-        IsDark = false;
+        localStorage.setItem('dark', false);
     } else {
         const secColor = '#fafafa';
         document.body.style.backgroundColor = 'black';
@@ -219,7 +219,7 @@ function toggleMode() {
                 tr.style.backgroundColor = 'black';
             });
         }
-        IsDark = true;
+        localStorage.setItem('dark', true);
     }
 }
 
