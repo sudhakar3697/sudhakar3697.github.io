@@ -4,11 +4,11 @@ const OC_API_URL = `https://our-clipboard.herokuapp.com/api/oc-data`;
 // const OC_API_URL = `http://localhost:5000/api/oc-data`;
 
 async function loadData() {
-    applyTheme(true);
+    applyTheme(localStorage.getItem('theme'));
     showClips();
     getArticles();
     getProjects();
-    addTwitterTimeline('light');
+    addTwitterTimeline(localStorage.getItem('theme'));
 }
 
 async function showClips() {
@@ -152,11 +152,8 @@ document.querySelector('#personal-expander').addEventListener('click', () => {
     }
 });
 
-// Dark theme
-let isDark = localStorage.getItem('dark');
-
-function applyTheme(noToggle = false) {
-    if (isDark && noToggle) {
+function applyTheme(theme) {
+    if (theme === 'dark') {
         const secColor = '#fafafa';
         document.body.style.backgroundColor = 'black';
         document.body.style.color = secColor;
@@ -188,7 +185,7 @@ function applyTheme(noToggle = false) {
                 tr.style.backgroundColor = 'black';
             });
         }
-        localStorage.setItem('dark', true);
+        localStorage.setItem('theme', 'dark');
     }
     else {
         document.body.style.backgroundColor = 'white';
@@ -221,12 +218,12 @@ function applyTheme(noToggle = false) {
                 tr.style.backgroundColor = 'white';
             });
         }
-        localStorage.setItem('dark', false);
+        localStorage.setItem('theme', 'light');
     }
 }
 
 document.querySelector('#night').addEventListener('click', () => {
-    applyTheme();
+    applyTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light');
 });
 
 async function addTwitterTimeline(theme) {
