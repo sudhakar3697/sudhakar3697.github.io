@@ -85,6 +85,23 @@ async function getProjects() {
     }
 }
 
+async function addTwitterTimeline(theme) {
+    const holder = document.getElementById('tw-tl');
+    holder.innerHTML = null;
+    twttr.widgets.createTimeline(
+        {
+            sourceType: 'profile',
+            screenName: 'sudhakar3697'
+        },
+        holder,
+        {
+            theme,
+            tweetLimit: 3,
+            chrome: 'noheader'
+        }
+    );
+}
+
 async function update() {
     try {
         await fetch(OC_API_URL, {
@@ -187,20 +204,3 @@ function applyTheme(theme) {
 document.querySelector('#night').addEventListener('click', () => {
     applyTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light');
 });
-
-async function addTwitterTimeline(theme) {
-    const holder = document.getElementById('tw-tl');
-    holder.innerHTML = null;
-    twttr.widgets.createTimeline(
-        {
-            sourceType: 'profile',
-            screenName: 'sudhakar3697'
-        },
-        holder,
-        {
-            theme,
-            tweetLimit: 3,
-            chrome: 'noheader'
-        }
-    );
-}

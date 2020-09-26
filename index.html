@@ -6,7 +6,7 @@
     <link rel="icon" href="sudax.png">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <!-- Add to home screen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -218,7 +218,8 @@
     <aside id="aside4">
         <h3>Others</h3>
         <ul>
-            <li><a rel="noopener noreferrer" target="_blank" href="https://sudhakar3697.github.io/todo">ToDo</a></li>
+            <li><a href="todo.html">Todo</a></li>
+            <!-- <li><a rel="noopener noreferrer" target="_blank" href="https://sudhakar3697.github.io/todo">ToDo</a></li> -->
             <li><a rel="noopener noreferrer" target="_blank" href="https://ourbox.herokuapp.com">Ourbox</a></li>
         </ul>
     </aside>
@@ -229,7 +230,7 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', async () => {
                 try {
-                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    const registration = await navigator.serviceWorker.register('sw.js');
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 } catch (err) {
                     console.error(err);
