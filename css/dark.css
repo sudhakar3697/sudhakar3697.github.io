@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: #fafafa;
+}
+
+header {
+    background-color: #282828;
+}
+
+#outc {
+    background-color: black;
+    color: #fafafa;
+}
+
+button {
+    color: black;
+    background-color: #fafafa;
+    border-color: #fafafa;
+}
+
+a {
+    color: #34e2eb;
+}
+
+tr {
+    background-color: black;
+}
+
+tr:hover {
+    background-color: #282828;
+}

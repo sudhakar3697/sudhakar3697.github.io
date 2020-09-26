@@ -4,14 +4,11 @@ const OC_API_URL = `https://our-clipboard.herokuapp.com/api/oc-data`;
 // const OC_API_URL = `http://localhost:5000/api/oc-data`;
 
 async function loadData() {
+    const theme = (localStorage.getItem('theme') === 'dark') ? 'dark' : 'light';
+    applyTheme(theme); // invokes addTwitterTimeline(theme)
     showClips();
-    Promise.all([
-        getArticles(),
-        getProjects()
-    ]).then(() => {
-        applyTheme(localStorage.getItem('theme'));
-    });
-    addTwitterTimeline(localStorage.getItem('theme'));
+    getArticles();
+    getProjects();
 }
 
 async function showClips() {
@@ -155,72 +152,34 @@ document.querySelector('#personal-expander').addEventListener('click', () => {
     }
 });
 
+
+function addStyleSheet(file) {
+    const stylesheet = document.getElementById('theme-stylesheet');
+    if (stylesheet) {
+        stylesheet.href = file;
+    }
+    else {
+        const head = document.head;
+        const link = document.createElement('link');
+        link.id = 'theme-stylesheet';
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        link.href = file;
+        head.appendChild(link);
+    }
+}
+
 function applyTheme(theme) {
     if (theme === 'dark') {
-        const secColor = '#fafafa';
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = secColor;
-        document.getElementsByTagName('header')[0].style.backgroundColor = '#282828';
-        document.getElementById('outc').style.backgroundColor = 'black';
-        document.getElementById('outc').style.color = secColor;
+        addStyleSheet('css/dark.css');
         document.getElementById('night').innerHTML = 'Light Theme';
-        document.getElementsByTagName('button')[0].style.color = 'black';
-        document.getElementsByTagName('button')[0].style.backgroundColor = secColor;
-        document.getElementsByTagName('button')[0].style.borderColor = secColor;
-        document.getElementsByTagName('button')[1].style.color = 'black';
-        document.getElementsByTagName('button')[1].style.backgroundColor = secColor;
-        document.getElementsByTagName('button')[1].style.borderColor = secColor;
-        document.getElementsByTagName('button')[2].style.color = 'black';
-        document.getElementsByTagName('button')[2].style.backgroundColor = secColor;
-        document.getElementsByTagName('button')[2].style.borderColor = secColor;
-        for (const a of document.getElementsByTagName('a')) {
-            a.style.color = '#34e2eb';
-        }
         addTwitterTimeline('dark');
-        for (const tr of document.getElementsByTagName('tr')) {
-            tr.style.backgroundColor = 'black';
-        }
-        for (const tr of document.getElementsByTagName('tr')) {
-            tr.addEventListener('mouseover', () => {
-                tr.style.backgroundColor = '#282828';
-            });
-            tr.addEventListener('mouseout', () => {
-                tr.style.backgroundColor = 'black';
-            });
-        }
         localStorage.setItem('theme', 'dark');
     }
     else {
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-        document.getElementsByTagName('header')[0].style.backgroundColor = 'white';
-        document.getElementById('outc').style.backgroundColor = 'white';
-        document.getElementById('outc').style.color = 'black';
+        addStyleSheet('css/light.css');
         document.getElementById('night').innerHTML = 'Dark Theme';
-        document.getElementsByTagName('button')[0].style.color = 'white';
-        document.getElementsByTagName('button')[0].style.backgroundColor = 'black';
-        document.getElementsByTagName('button')[0].style.borderColor = 'black';
-        document.getElementsByTagName('button')[1].style.color = 'white';
-        document.getElementsByTagName('button')[1].style.backgroundColor = 'black';
-        document.getElementsByTagName('button')[1].style.borderColor = 'black';
-        document.getElementsByTagName('button')[2].style.color = 'white';
-        document.getElementsByTagName('button')[2].style.backgroundColor = 'black';
-        document.getElementsByTagName('button')[2].style.borderColor = 'black';
-        for (const a of document.getElementsByTagName('a')) {
-            a.style.color = 'blue';
-        }
         addTwitterTimeline('light');
-        for (const tr of document.getElementsByTagName('tr')) {
-            tr.style.backgroundColor = 'white';
-        }
-        for (const tr of document.getElementsByTagName('tr')) {
-            tr.addEventListener('mouseover', () => {
-                tr.style.backgroundColor = '#f5f5f5';
-            });
-            tr.addEventListener('mouseout', () => {
-                tr.style.backgroundColor = 'white';
-            });
-        }
         localStorage.setItem('theme', 'light');
     }
 }
