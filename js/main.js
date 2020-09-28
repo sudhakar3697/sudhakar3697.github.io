@@ -13,12 +13,22 @@ async function loadData() {
 
 async function showClips() {
     try {
+        out.value = '';
         let doc = await fetch(OC_API_URL);
         doc = await doc.text();
-        if (doc)
-            out.value += doc + '\n';
+        if (doc) {
+            out.value = doc;
+            localStorage.setItem('oc_data', out.value);
+        }
     } catch (err) {
         console.log(err);
+        out.value = localStorage.getItem('oc_data');
+        console.log('value taken from local storage');
+        document.getElementById('updatetop').style.display = 'none';
+        document.getElementById('updatebottom').style.display = 'none';
+        const p = document.createElement('p');
+        p.innerHTML = 'You are offline!';
+        document.getElementById('oc-section').appendChild(p);
     }
 }
 
@@ -115,6 +125,7 @@ async function update() {
         document.getElementById('oc-status').classList.remove('oc-status-success', 'oc-status-danger');
         document.getElementById('oc-status').classList.add('oc-status-success');
         document.getElementById('oc-status-text').innerHTML = 'Updated Successfully';
+        localStorage.setItem('oc_data', out.value);
     } catch (err) {
         console.log(err);
         document.getElementById('oc-status').style.display = 'block';
