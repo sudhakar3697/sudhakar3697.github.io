@@ -55,6 +55,7 @@ async function signOut() {
 
 async function loadToDOs(token, type) {
     try {
+        out.value = '';
         let doc = await fetch(`${TD_API_URL}${type ? `?type=${type}` : ''}`, {
             headers: {
                 'Authorization': `BEARER ${token}`
@@ -62,7 +63,7 @@ async function loadToDOs(token, type) {
         });
         doc = await doc.text();
         if (doc) {
-            out.value += doc + '\n';
+            out.value = doc;
             localStorage.setItem('td_data', out.value);
         }
     } catch (err) {
