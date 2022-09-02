@@ -135,51 +135,9 @@ async function update() {
     }
 }
 
-document.querySelector('#show-oc-button').addEventListener('click', () => {
-    document.getElementById('about-me').style.display = 'none';
-    document.getElementById('oc-section').style.display = 'block';
-});
-
 document.querySelector('#oc-status-close').addEventListener('click', () => {
     document.getElementById('oc-status').style.display = 'none';
 });
-
-document.querySelector('#about-me-button').addEventListener('click', () => {
-    document.getElementById('oc-section').style.display = 'none';
-    document.getElementById('about-me').style.display = 'block';
-});
-
-// toggle skills & personal in About me
-
-let skillOpen = false;
-document.querySelector('#skills-expander').addEventListener('click', () => {
-    if (skillOpen) {
-        document.getElementById('skills').style.display = 'none';
-        document.getElementById('skills-expander').innerHTML = '&#709;';
-        skillOpen = false;
-    }
-    else {
-        document.getElementById('skills').style.display = 'block';
-        document.getElementById('skills-expander').innerHTML = '&#708;';
-        skillOpen = true;
-    }
-});
-
-
-let persOpen = true;
-document.querySelector('#personal-expander').addEventListener('click', () => {
-    if (persOpen) {
-        document.getElementById('personal').style.display = 'none';
-        document.getElementById('personal-expander').innerHTML = '&#709;';
-        persOpen = false;
-    }
-    else {
-        document.getElementById('personal').style.display = 'block';
-        document.getElementById('personal-expander').innerHTML = '&#708;';
-        persOpen = true;
-    }
-});
-
 
 function addStyleSheet(file) {
     const stylesheet = document.getElementById('theme-stylesheet');

@@ -5,16 +5,16 @@
     <title>My TODO</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/todo.css">
-    <link rel="icon" href="sudax.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="todo.css">
+    <link rel="icon" href="../sudax.png">
+    <link rel="manifest" href="../manifest.json">
     <!-- Add to home screen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="theme-color" content="black" />
     <meta name="apple-mobile-web-app-title" content="Todo">
-    <link rel="apple-touch-icon" href="sudax.png">
-    <meta name="msapplication-TileImage" content="sudax.png">
+    <link rel="apple-touch-icon" href="../sudax.png">
+    <meta name="msapplication-TileImage" content="../sudax.png">
     <meta name="msapplication-TileColor" content="black">
     <meta name="description" content="Sudhakar Ramasamy's Todo">
     <meta name="keywords" content="sudhakar, sudhakar3697, rsudhakar3697, sudhakar rs, sudhakar ramasamy">
@@ -54,7 +54,7 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', async () => {
                 try {
-                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    const registration = await navigator.serviceWorker.register('../sw.js');
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 } catch (err) {
                     console.error(err);
@@ -62,7 +62,7 @@
             });
         }
     </script>
-    <script src="js/todo.js"></script>
+    <script src="todo.js"></script>
 
 </body>
 

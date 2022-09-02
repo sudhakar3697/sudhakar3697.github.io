@@ -1,4 +1,4 @@
-const cacheName = 'cache-v2';
+const cacheName = 'cache-v3';
 const filesToCache = [
   '/',
   'sudax.png',
@@ -15,14 +15,14 @@ const filesToCache = [
   'res/logos/twitter.svg',
   'res/logos/whatsapp.svg',
   'js/main.js',
-  'js/todo.js',
   'css/main.css',
   'css/light.css',
   'css/dark.css',
-  'css/todo.css',
   'index.html',
-  'todo.html',
-  'manifest.json'
+  'manifest.json',
+  'todo/todo.js',
+  'todo/todo.css',
+  'todo/todo.html',
 ];
 
 self.addEventListener('install', e => {

@@ -21,11 +21,3 @@ button {
 a {
     color: #34e2eb;
 }
-
-tr {
-    background-color: black;
-}
-
-tr:hover {
-    background-color: #282828;
-}
