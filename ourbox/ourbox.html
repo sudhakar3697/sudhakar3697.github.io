@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ourbox</title>
+    <link rel="icon" href="../sudax.png">
+    <meta charset="UTF-8">
+    <meta name="description" content="Ourbox">
+    <meta name="keywords" content="ourbox, sudhakar, sudhakar3697, rsudhakar3697, sudhakar rs, sudhakar ramasamy">
+    <meta name="author" content="Sudhakar Ramasamy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #file-uploader {
+            float: left;
+        }
+
+        #uploader button {
+            margin-bottom: 1%;
+        }
+
+        .u-button {
+            margin-left: 2%;
+            font-weight: bolder;
+            color: blue;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        tr:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <header>
+        <h1>Ourbox</h1>
+    </header>
+    <main>
+        <section id="uploader">
+            <form id="file-uploader" enctype="multipart/form-data">
+                <input type="file" onchange="validateSize(this)" multiple name="files-to-upload" />
+            </form>
+            <button onclick="upload()"> Upload</button>
+        </section>
+        <section>
+            <h3>Uploads <span onclick="showFileList()" title="Refresh" class="u-button">&#x21BB;</span></h3>
+            <table id="file-table">
+                <tr>
+                    <th>File</th>
+                    <th>Size (MB)</th>
+                    <th>Updated At</th>
+                    <th>Controls</th>
+                </tr>
+            </table>
+        </section>
+        <hr />
+        <section>
+            <h3>Ongoing uploads <span onclick="showUploadsList()" title="Refresh" class="u-button">&#x21BB;</span>
+            </h3>
+            <table id="upload-progress-table">
+                <tr>
+                    <th>File</th>
+                    <th>Progress</th>
+                    <th>Pause/Resume</th>
+                    <th>Cancel</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <script src="ourbox.js"></script>
+
+</body>
+
+</html>
