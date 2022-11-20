@@ -1,6 +1,6 @@
 const out = document.getElementById('outc');
 
-const OC_API_URL = `https://determined-worm-dress.cyclic.app/api/oc-data`;
+const OC_API_URL = `https://sudhakar3697.cyclic.app/api/oc-data`;
 
 async function loadData() {
     const theme = (localStorage.getItem('theme') === 'dark') ? 'dark' : 'light';

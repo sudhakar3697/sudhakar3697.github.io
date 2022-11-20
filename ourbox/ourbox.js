@@ -1,4 +1,4 @@
-const API_URL = `https://determined-worm-dress.cyclic.app/api/ob-data`;
+const API_URL = `https://sudhakar3697.cyclic.app/api/ob-data`;
 
 async function init() {
     showFileList(true);
