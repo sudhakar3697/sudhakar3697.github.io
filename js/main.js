@@ -1,7 +1,6 @@
 const out = document.getElementById('outc');
 
 const OC_API_URL = `https://determined-worm-dress.cyclic.app/api/oc-data`;
-// const OC_API_URL = `http://localhost:5000/api/oc-data`;
 
 async function loadData() {
     const theme = (localStorage.getItem('theme') === 'dark') ? 'dark' : 'light';
@@ -49,11 +48,8 @@ async function getArticles() {
             h.appendChild(a);
             const p1 = document.createElement('p');
             p1.innerHTML = `<strong>Published:</strong> ${readable_publish_date} ${tag_list.map(i => `#${i}`).join(' ')}`;
-            // const p2 = document.createElement('p');
-            // p2.innerHTML = `${positive_reactions_count} reaction(s) | ${comments_count} comment(s)`;
             d.appendChild(h);
             d.appendChild(p1);
-            // d.appendChild(p2);
             ar.appendChild(d);
             document.getElementById('articles').appendChild(ar);
         }
@@ -82,11 +78,8 @@ async function getProjects() {
             h.appendChild(a);
             const p1 = document.createElement('p');
             p1.innerHTML = `${description}`;
-            // const p2 = document.createElement('p');
-            // p2.innerHTML = `${stargazers_count} stargazer(s)`;
             d.appendChild(h);
             d.appendChild(p1);
-            // d.appendChild(p2);
             ar.appendChild(d);
             document.getElementById('repos').appendChild(ar);
         }

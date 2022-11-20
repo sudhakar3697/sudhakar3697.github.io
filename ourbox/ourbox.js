@@ -1,5 +1,4 @@
 const API_URL = `https://determined-worm-dress.cyclic.app/api`;
-// const API_URL = `http://localhost:5000/api`;
 
 async function init() {
     showFileList(true);
@@ -191,7 +190,6 @@ async function upload() {
         });
         result = await result.json();
         console.log(result);
-        // alert('Refresh to view the updates');
     } catch (err) {
         console.log(err);
     }

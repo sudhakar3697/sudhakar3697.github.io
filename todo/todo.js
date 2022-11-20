@@ -1,7 +1,5 @@
 const TD_SI_URL = `https://determined-worm-dress.cyclic.app/api/sign-in`;
 const TD_API_URL = `https://determined-worm-dress.cyclic.app/api/td-data`;
-// const TD_SI_URL = `http://localhost:5000/api/sign-in`;
-// const TD_API_URL = `http://localhost:5000/api/td-data`;
 const out = document.getElementById('tdta');
 
 document.getElementById('pwd').addEventListener('keyup', (e) => {
