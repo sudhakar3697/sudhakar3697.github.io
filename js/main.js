@@ -1,6 +1,6 @@
 const out = document.getElementById('outc');
 
-const OC_API_URL = `https://our-clipboard.herokuapp.com/api/oc-data`;
+const OC_API_URL = `https://determined-worm-dress.cyclic.app/api/oc-data`;
 // const OC_API_URL = `http://localhost:5000/api/oc-data`;
 
 async function loadData() {
