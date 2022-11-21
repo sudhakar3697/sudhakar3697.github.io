@@ -1,6 +1,35 @@
 const API_URL = `https://sudhakar3697.cyclic.app/api/ob-data`;
 
+function addStyleSheet(file) {
+    const stylesheet = document.getElementById('theme-stylesheet');
+    if (stylesheet) {
+        stylesheet.href = file;
+    }
+    else {
+        const head = document.head;
+        const link = document.createElement('link');
+        link.id = 'theme-stylesheet';
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        link.href = file;
+        head.appendChild(link);
+    }
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        addStyleSheet('dark.css');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {
+        addStyleSheet('light.css');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
 async function init() {
+    const theme = (localStorage.getItem('theme') === 'dark') ? 'dark' : 'light';
+    applyTheme(theme);
     showFileList(true);
     showUploadsList(true);
 }
@@ -48,7 +77,7 @@ async function showFileList(init = false) {
 
             const delButtonCol = document.createElement('td');
             const deleteButton = document.createElement('span');
-            deleteButton.setAttribute('class', 'u-button');
+            deleteButton.setAttribute('class', 'd-button');
             deleteButton.innerHTML = '&#x2718;';
             deleteButton.title = `Delete ${file.fullPath}`;
             deleteButton.onclick = () => { deleteItem(file.fullPath) };

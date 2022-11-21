@@ -1,0 +1,14 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+header {
+    background-color: white;
+}
+
+button {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
