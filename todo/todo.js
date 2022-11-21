@@ -1,5 +1,5 @@
-const TD_SI_URL = `http://localhost:5000/api/td-data/sign-in`;
-const TD_API_URL = `http://localhost:5000/api/td-data`;
+const TD_SI_URL = `https://sudhakar3697.cyclic.app/api/td-data/sign-in`;
+const TD_API_URL = `https://sudhakar3697.cyclic.app/api/td-data`;
 const out = document.getElementById('tdta');
 
 function addStyleSheet(file) {
