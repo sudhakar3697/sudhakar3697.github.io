@@ -1,6 +1,33 @@
-const TD_SI_URL = `https://sudhakar3697.cyclic.app/api/td-data/sign-in`;
-const TD_API_URL = `https://sudhakar3697.cyclic.app/api/td-data`;
+const TD_SI_URL = `http://localhost:5000/api/td-data/sign-in`;
+const TD_API_URL = `http://localhost:5000/api/td-data`;
 const out = document.getElementById('tdta');
+
+function addStyleSheet(file) {
+    const stylesheet = document.getElementById('theme-stylesheet');
+    if (stylesheet) {
+        stylesheet.href = file;
+    }
+    else {
+        const head = document.head;
+        const link = document.createElement('link');
+        link.id = 'theme-stylesheet';
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        link.href = file;
+        head.appendChild(link);
+    }
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        addStyleSheet('dark.css');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {
+        addStyleSheet('light.css');
+        localStorage.setItem('theme', 'light');
+    }
+}
 
 document.getElementById('pwd').addEventListener('keyup', (e) => {
     e.preventDefault();
@@ -10,6 +37,9 @@ document.getElementById('pwd').addEventListener('keyup', (e) => {
 });
 
 function showSignInOrContent() {
+    const theme = (localStorage.getItem('theme') === 'dark') ? 'dark' : 'light';
+    applyTheme(theme);
+
     google.accounts.id.initialize({
         client_id:
           "244780050095-9ccg4opqdf7eimdi36h1toi232la4ecv.apps.googleusercontent.com",
@@ -58,7 +88,9 @@ async function signIn() {
 }
 
 async function signOut() {
-    localStorage.clear();
+    localStorage.removeItem('td_data');
+    localStorage.removeItem('token_type');
+    localStorage.removeItem('token');
     signOutGoogle();
     showSignInOrContent();
 }

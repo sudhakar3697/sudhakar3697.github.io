@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+    color: #fafafa;
+}
+
+header {
+    background-color: #282828;
+}
+
+#tdta {
+    background-color: black;
+    color: #fafafa;
+}
+
+button {
+    color: black;
+    background-color: #fafafa;
+    border-color: #fafafa;
+}
+
+a {
+    color: #34e2eb;
+}
