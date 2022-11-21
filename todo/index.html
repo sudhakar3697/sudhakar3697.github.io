@@ -19,10 +19,6 @@
     <meta name="description" content="Sudhakar Ramasamy's Todo">
     <meta name="keywords" content="sudhakar, sudhakar3697, rsudhakar3697, sudhakar rs, sudhakar ramasamy">
     <meta name="author" content="Sudhakar Ramasamy">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id"
-        content="244780050095-9ccg4opqdf7eimdi36h1toi232la4ecv.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body onload="showSignInOrContent()">
@@ -37,7 +33,7 @@
                 <label for="pwd">Password</label>
                 <input type="password" id="pwd" />
                 <button id="sib" type="button" onclick="signIn()">Login</button>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                <div id="gsButtonDiv"></div>
             </form>
         </section>
         <section id="td-section">
@@ -50,20 +46,8 @@
             <button id="update-button" onclick="updateToDOs()">Update</button>
         </section>
     </main>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', async () => {
-                try {
-                    const registration = await navigator.serviceWorker.register('../sw.js');
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                } catch (err) {
-                    console.error(err);
-                }
-            });
-        }
-    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="todo.js"></script>
-
 </body>
 
 </html>

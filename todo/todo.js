@@ -10,6 +10,18 @@ document.getElementById('pwd').addEventListener('keyup', (e) => {
 });
 
 function showSignInOrContent() {
+    google.accounts.id.initialize({
+        client_id:
+          "244780050095-9ccg4opqdf7eimdi36h1toi232la4ecv.apps.googleusercontent.com",
+        callback: onSignIn,
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("gsButtonDiv"),
+        {
+          theme: "filled_black",
+          size: "medium",
+        }
+      );
     document.getElementById('tdta').value = '';
     document.getElementById('id').value = '';
     document.getElementById('pwd').value = '';
@@ -113,15 +125,11 @@ document.querySelector('#td-status-close').addEventListener('click', () => {
 });
 
 function onSignIn(googleUser) {
-    const id_token = googleUser.getAuthResponse().id_token;
-    localStorage.setItem('token', id_token);
+    localStorage.setItem('token', googleUser.credential);
     localStorage.setItem('token_type', 'google');
     showSignInOrContent();
 }
 
 function signOutGoogle() {
-    const auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        console.log('User signed out.');
-    });
+    google.accounts.id.disableAutoSelect();
 }
