@@ -51,7 +51,7 @@ main {
     grid-area: main;
 }
 
-aside h3, #oc-h3 {
+aside h3, #oc-h2 {
     text-align: center;
 }
 
@@ -170,6 +170,12 @@ button {
     }
     #aside3, #aside4 {
         margin-right: 0;
+    }
+    #updatebottom {
+        margin-top: 2%;
+    }
+    #aside4 ul li {
+        margin-bottom: 5%;
     }
 }
 
