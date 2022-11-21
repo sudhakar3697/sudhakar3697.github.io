@@ -28,20 +28,22 @@
     <main>
         <section id="si-section">
             <form>
-                <label for="id">Username</label>
-                <input type="text" id="id" />
-                <label for="pwd">Password</label>
-                <input type="password" id="pwd" />
-                <button id="sib" type="button" onclick="signIn()">Login</button>
+                <label for="id">Username</label><br/>
+                <input type="text" id="id" /><br/><br/>
+                <label for="pwd">Password</label><br/>
+                <input type="password" id="pwd" /><br/><br/>
+                <button id="sib" type="button" onclick="signIn()">Login</button><br/><br/>
                 <div id="gsButtonDiv"></div>
             </form>
         </section>
         <section id="td-section">
             <button onclick="signOut()">Logout</button>
+            <br/>
             <div id="td-status"><span id="td-status-text">OC Status</span><span id="td-status-close">x</span></div>
             <br />
             <textarea rows="20" cols="150" id="tdta" spellcheck="false"
                 placeholder="TODO items will appear here you can add/remove/update"></textarea>
+            <br />
             <br />
             <button id="update-button" onclick="updateToDOs()">Update</button>
         </section>
