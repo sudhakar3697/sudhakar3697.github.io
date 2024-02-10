@@ -1,4 +1,4 @@
-const cacheName = 'cache-v6';
+const cacheName = 'cache-v7';
 const filesToCache = [
   '/',
   'sudax.png',
@@ -12,7 +12,7 @@ const filesToCache = [
   'res/logos/npm.svg',
   'res/logos/phone.svg',
   'res/logos/stackoverflow.svg',
-  'res/logos/twitter.svg',
+  'res/logos/twitter.ico',
   'res/logos/whatsapp.svg',
   'js/main.js',
   'css/main.css',
