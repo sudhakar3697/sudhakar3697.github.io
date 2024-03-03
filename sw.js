@@ -1,4 +1,4 @@
-const cacheName = 'cache-v7';
+const cacheName = 'cache-v8';
 const filesToCache = [
   '/',
   'sudax.png',
