@@ -28,7 +28,7 @@
         </section>
         <nav id="navbar">
             <ul>
-                <li><a rel="noopener noreferrer" target="_blank" href="res/resume.pdf">Résumé</a></li>
+                <!-- <li><a rel="noopener noreferrer" target="_blank" href="res/resume.pdf">Résumé</a></li> -->
                 <li><a rel="noopener noreferrer" target="_blank" href="https://github.com/sudhakar3697"><img
                             src="res/logos/github.svg" height="30" width="30" alt="GitHub"
                             title="github.com/sudhakar3697" /></a></li>
@@ -81,7 +81,8 @@
         </nav>
     </header>
     <main>
-        <section id="oc-section">
+        <embed id="resume_embed" src="res/resume.pdf" width="100%" height="600px" />
+        <!-- <section id="oc-section">
             <label for="outc">
                 <h2 id="oc-h2">Our Clipboard!</h2>
             </label>
@@ -91,14 +92,14 @@
                 placeholder="Copied items will appear here you can add/remove/update"></textarea>
             <br />
             <button id="updatebottom" onclick="update()">Update</button>
-        </section>
+        </section> -->
     </main>
     <aside id="aside1">
-        <h3>My GitHub Repos</h3>
+        <h3 id="github-repo-count-title">My GitHub Repos</h3>
         <ul id="repos"></ul>
     </aside>
     <aside id="aside2">
-        <h3>My DEV Articles</h3>
+        <h3 id="dev-articles-count-title">My DEV Articles</h3>
         <ul id="articles"></ul>
     </aside>
     <aside id="aside3">
@@ -108,6 +109,8 @@
     <aside id="aside4">
         <h3>Others</h3>
         <ul>
+            <li><a href="https://sudhakar3697.github.io/clipboard-history">Clipboard History</a></li>
+            <li><a href="https://sudhakar3697.github.io/sudax">Sudax</a></li>
             <li><a href="todo/index.html">Todo</a></li>
             <li><a href="ourbox/index.html">Ourbox</a></li>
         </ul>
