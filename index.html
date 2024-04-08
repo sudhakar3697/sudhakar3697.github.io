@@ -81,7 +81,22 @@
         </nav>
     </header>
     <main>
-        <embed id="resume_embed" src="res/resume.pdf" width="100%" height="600px" />
+        <!-- <embed id="resume_embed" src="res/resume.pdf" width="100%" height="600px" /> -->
+        <object
+        data="res/resume.pdf#navpanes=0"
+        type="application/pdf"
+        width="100%"
+        height="600px"
+      >
+        <p style="text-align: center">
+          <br /><br />
+          You don't have a PDF plugin view my Résumé, but you can download the
+          file and view. <br /><br />
+          <a href="res/resume.pdf" download="Sudhakar_Resume">
+            Click here to download my Résumé PDF
+          </a>
+        </p>
+      </object>
         <!-- <section id="oc-section">
             <label for="outc">
                 <h2 id="oc-h2">Our Clipboard!</h2>
